@@ -1,0 +1,101 @@
+{
+  "main": {
+    "name": "Ismail Saghraoui",
+    "occupation": "Software Engineer",
+    "description": "I eat, sleep and breathe Computer Science",
+    "image": "low-quality.png",
+    "bio": "Hi there! I am Ismail! In less than two years, I have worked with many technologies including: ReactJs, NextJs, NodeJs, Docker, Kubernetes and much more. In that time, I have worked on more than a dozen projects and helped manage a project for one of the firm's long-time clients.",
+    "contactmessage": "Get in touch with me",
+    "email": "ismailsaghraoui@gmail.com",
+    "phone": "+33 6 52 77 12 03",
+    "address": {
+      "street": "47 rue de Montreuil",
+      "city": "Vincennes",
+      "state": "",
+      "zip": "94300"
+    },
+    "website": "https://www.papareact.com/course",
+    "resumedownload": "https://www.linkedin.com/in/ismail-saghraoui-489bb016a/",
+    "social": [
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/ismail-saghraoui-489bb016a/",
+        "className": "fa fa-linkedin"
+      },
+      {
+        "name": "github",
+        "url": "https://github.com/Ismail-del",
+        "className": "fa fa-github"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "My Programming Language Proficiency",
+    "education": [
+      {
+        "school": "University of Technology of Troyes - France",
+        "degree": "Master's Degree, Computer Science",
+        "graduated": "July 2021",
+        "description": "Graduated with First Class Honours"
+      },
+      {
+        "school": "Riga Technical University",
+        "degree": "Master's Degree, Computer Science",
+        "graduated": "July 2020",
+        "description": "Erasmus Student Network"
+      }
+    ],
+    "work": [
+      {
+        "company": "Positive Thinking Company",
+        "title": "Software Engineer",
+        "years": "January - Present",
+        "description": ""
+      }
+    ],
+    "skills": [
+      {
+        "name": "ReactJs",
+        "level": "90%"
+      },
+      {
+        "name": "Python",
+        "level": "85%"
+      },
+      {
+        "name": "NodeJS",
+        "level": "75%"
+      },
+      {
+        "name": "Docker",
+        "level": "84%"
+      },
+      {
+        "name": "Kubernetes",
+        "level": "80%"
+      },
+      {
+        "name": "AWS (S3 - EC2 - ECS - EKS - Amplify)",
+        "level": "70%"
+      }
+    ]
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "Airbnb Clone (React JS)",
+        "category": "",
+        "image": "snapchat.jpg",
+        "url": "https://ismail-airbnb-project.vercel.app/"
+      }
+    ]
+  },
+  "testimonials": {
+    "testimonials": [
+      {
+        "text": "Ismail has been a driving force in the team. His skills in programming helped accelerate the development of the project He also has a strong knowledge of project management, especially in agile practices for software development which proved to be crucial for the smooth running of the project. I enjoyed working with Ismail, his professionalism and flexibility helped us achieve our goals. I hope to have the opportunity to work with him again in the future.",
+        "user": "Lucien Legros"
+      }
+    ]
+  }
+}

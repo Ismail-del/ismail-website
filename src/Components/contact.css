@@ -1,0 +1,16 @@
+.validation {
+  border: 2px solid red;
+
+  width: 60%;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  font: 16px/24px 'opensans-bold', sans-serif;
+  color: white;
+}
+
+.noValidation {
+  border: 0;
+}
+.validationForm {
+  border: 2px solid red;
+}
