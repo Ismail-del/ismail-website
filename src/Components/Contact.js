@@ -1,11 +1,16 @@
 // import React, { useState } from 'react';
 import './contact.css';
-// import emailjs from 'emailjs-com';
+import emailjs from 'emailjs-com';
 import useInput from './hooks/use-input';
 import useValidation from './hooks/use-validation';
+import { useEffect, useState } from 'react';
 
 const Contact = ({ data }) => {
-  // const [name, setName] = useState('');
+  const [validationFormName, setValidationFormName] = useState('');
+  const [validationFormEmail, setValidationFormEmail] = useState('');
+  const [validationFormSubject, setValidationFormSubject] = useState('');
+  const [validationFormMessage, setValidationFormMessage] = useState('');
+  const [formSend, setFormSend] = useState(false);
 
   // const [nameValidation, setNameValidation] = useState(true);
 
@@ -13,11 +18,11 @@ const Contact = ({ data }) => {
   // const [subject, setSubject] = useState('');
   // const [message, setMessage] = useState('');
   // const [messageValidation, setMessageValidation] = useState(true);
+
   const {
     value: entredName,
     isValidValue: isValidName,
     hasError: hasErrorName,
-    formValidation: validationFormName,
     entredValueHandler: entredNameHandler,
     onBlurHandler: onBlurNameHandler,
     resetValue: resetName,
@@ -74,6 +79,39 @@ const Contact = ({ data }) => {
   const { cssClassValidity: emailClassValidity, phrase: emailPhrase } =
     useValidation(hasErrorEmail, 'email');
 
+  useEffect(() => {
+    if (!isValidName) {
+      setValidationFormName('');
+      setFormSend(false);
+    }
+    if (!isValidEmail) {
+      setValidationFormEmail('');
+      setFormSend(false);
+    }
+    if (!isValidMessage) {
+      setValidationFormMessage('');
+      setFormSend(false);
+    }
+    if (!isValidSubject) {
+      setValidationFormSubject('');
+      setFormSend(false);
+    }
+
+    // if (!isValidName || !isValidEmail || !isValidMessage || !isValidSubject) {
+    //   setValidationFormName('');
+    // }
+  }, [
+    isValidName,
+    isValidEmail,
+    isValidMessage,
+    isValidSubject,
+    validationFormName,
+    validationFormEmail,
+    validationFormMessage,
+    validationFormSubject,
+    // validationForm,
+  ]);
+
   if (data) {
     var contactName = data.name;
     var street = data.address.street;
@@ -84,17 +122,50 @@ const Contact = ({ data }) => {
     var contactEmail = data.email;
     var contactMessage = data.contactmessage;
   }
-  const cssClassForm = validationFormName ? 'noValidation' : 'validationForm';
 
   const submitForm = (e) => {
     e.preventDefault();
+
+    if (!isValidName && !isValidEmail && !isValidMessage && !isValidSubject) {
+      // emailjs
+      //   .sendForm(
+      //     'service_fdkdvoa',
+      //     'template_d1rtudg',
+      //     e.target,
+      //     'user_G66Veun6vUyyu3j8jGtGB'
+      //   )
+      //   .then((res) => {
+      //     console.log(res);
+      //   })
+      //   .catch((err) => console.log(err));
+
+      // setValidationForm('');
+      setFormSend(true);
+      setValidationFormName('');
+      setValidationFormEmail('');
+      setValidationFormSubject('');
+      setValidationFormMessage('');
+      resetName();
+      resetEmail();
+      resetMessage();
+      resetSubject();
+    } else {
+      // setValidationForm('validationForm');
+      setValidationFormName('validationForm');
+      setValidationFormEmail('validationForm');
+      setValidationFormSubject('validationForm');
+      setValidationFormMessage('validationForm');
+    }
+
     // if (isValidName && !hasErrorName) {
     //   console.log('form not valid');
     //   setformPhrase('validationForm');
     //   console.log('formPhrase= ', formPhrase);
     //   return;
     // }
-    console.log('cssClassForm = ', cssClassForm);
+
+    // console.log('hasErrorName = ', hasErrorName);
+    // console.log('validationFormName = ', validationFormName);
 
     // console.log("e = ", e)
     // console.log(e.target);
@@ -104,10 +175,7 @@ const Contact = ({ data }) => {
     // }
     // console.log('entredName = ', entredName);
     // console.log('hasErrorName = ', hasErrorName);
-    resetName();
-    resetEmail();
-    resetMessage();
-    resetSubject();
+
     // setName('');
     // emailjs.sendForm('service_fdkdvoa', 'template_d1rtudg', e.target, 'user_G66Veun6vUyyu3j8jGtGB')
     //   .then(res => {
@@ -155,9 +223,9 @@ const Contact = ({ data }) => {
                   defaultValue=""
                   value={entredName}
                   size="35"
-                  id="contactName"
+                  id={validationFormName}
                   name="contactName"
-                  className={cssClassForm}
+                  className={nameClassValidity}
                   onChange={entredNameHandler}
                   onBlur={onBlurNameHandler}
                 />
@@ -172,7 +240,7 @@ const Contact = ({ data }) => {
                   defaultValue=""
                   value={entredEmail}
                   size="35"
-                  // id="contactEmail"
+                  id={validationFormEmail}
                   className={emailClassValidity}
                   name="contactEmail"
                   onBlur={onBlurEmailHandler}
@@ -187,7 +255,7 @@ const Contact = ({ data }) => {
                   defaultValue=""
                   value={entredSubject}
                   size="35"
-                  id="contactSubject"
+                  id={validationFormSubject}
                   name="contactSubject"
                   onBlur={onBlurSubjectHandler}
                   className={subjectClassValidity}
@@ -206,7 +274,7 @@ const Contact = ({ data }) => {
                   onChange={entredMessageHandler}
                   onBlur={onBlurMessageHandler}
                   className={messageClassValidity}
-                  // id="contactMessage"
+                  id={validationFormMessage}
                   name="contactMessage"
                 ></textarea>
               </div>
@@ -216,6 +284,7 @@ const Contact = ({ data }) => {
                   Submit
                 </button>
               </div>
+              {formSend && <div className="formSend">form sent succeded</div>}
             </fieldset>
           </form>
 
