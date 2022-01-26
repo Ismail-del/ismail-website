@@ -75,7 +75,7 @@
         "level": "80%"
       },
       {
-        "name": "AWS (S3 - EC2 - ECS - EKS - Amplify)",
+        "name": "AWS (S3 - EC2 - ECS - EKS - EFS - Amplify)",
         "level": "70%"
       }
     ]

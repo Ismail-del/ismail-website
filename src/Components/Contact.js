@@ -127,17 +127,15 @@ const Contact = ({ data }) => {
     e.preventDefault();
 
     if (!isValidName && !isValidEmail && !isValidMessage && !isValidSubject) {
-      // emailjs
-      //   .sendForm(
-      //     'service_fdkdvoa',
-      //     'template_d1rtudg',
-      //     e.target,
-      //     'user_G66Veun6vUyyu3j8jGtGB'
-      //   )
-      //   .then((res) => {
-      //     console.log(res);
-      //   })
-      //   .catch((err) => console.log(err));
+      emailjs
+        .sendForm(
+          'service_fdkdvoa',
+          'template_d1rtudg',
+          e.target,
+          'user_G66Veun6vUyyu3j8jGtGB'
+        )
+        .then((res) => {})
+        .catch((err) => console.log(err));
 
       // setValidationForm('');
       setFormSend(true);
@@ -284,7 +282,11 @@ const Contact = ({ data }) => {
                   Submit
                 </button>
               </div>
-              {formSend && <div className="formSend">form sent succeded</div>}
+              {formSend && (
+                <div className="formSend">
+                  Your message was sent, thank you!
+                </div>
+              )}
             </fieldset>
           </form>
 
