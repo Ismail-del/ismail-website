@@ -2,17 +2,17 @@
   "main": {
     "name": "Ismail Saghraoui",
     "occupation": "Software Engineer",
-    "description": "I eat, sleep and breathe Computer Science",
+    "description": "I am passionate about computers and new technologies",
     "image": "low-quality.png",
     "bio": "Hi there! I am Ismail! In less than two years, I have worked with many technologies including: ReactJs, NextJs, NodeJs, Docker, Kubernetes and much more. In that time, I have worked on more than a dozen projects and helped manage a project for one of the firm's long-time clients.",
     "contactmessage": "Get in touch with me",
     "email": "ismailsaghraoui@gmail.com",
     "phone": "+33 6 52 77 12 03",
     "address": {
-      "street": "47 rue de Montreuil",
-      "city": "Vincennes",
+      "street": "11 Allée de la Noiserie",
+      "city": "Noisy-Le-Grand",
       "state": "",
-      "zip": "94300"
+      "zip": "93160"
     },
     "website": "https://www.papareact.com/course",
     "resumedownload": "https://www.linkedin.com/in/ismail-saghraoui-489bb016a/",
@@ -34,7 +34,7 @@
     "education": [
       {
         "school": "University of Technology of Troyes - France",
-        "degree": "Master's Degree, Computer Science",
+        "degree": "Engineering degree, Computer Science",
         "graduated": "July 2021",
         "description": "Graduated with First Class Honours"
       },
@@ -51,6 +51,12 @@
         "title": "Software Engineer",
         "years": "January - Present",
         "description": ""
+      },
+      {
+        "company": "Eocen",
+        "title": "Software Engineer",
+        "years": "February - July",
+        "description": "Build a gantt application"
       }
     ],
     "skills": [
